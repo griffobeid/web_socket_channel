@@ -65,7 +65,9 @@ class HtmlWebSocketChannel extends StreamChannelMixin
   /// binary messages to be delivered as [Uint8List]s. If it's
   /// [BinaryType.blob], they're delivered as [Blob]s instead.
   HtmlWebSocketChannel.connect(url,
-      {Iterable<String>? protocols, BinaryType? binaryType})
+      {Iterable<String>? protocols,
+      BinaryType? binaryType,
+      Map<String, dynamic>? headers})
       : this(WebSocket(url.toString(), protocols)
           ..binaryType = (binaryType ?? BinaryType.list).value);
 
